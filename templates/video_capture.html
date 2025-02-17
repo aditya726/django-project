@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video-Capture</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .video_class{
+            display: flex;
+            justify-content: center;
+            margin-top: 0%;
+        }
+
+            
+
+    </style>
+</head>
+<body>
+    {%load static%}
+    <h1>capture faces</h1>
+    <div class = 'video_class'>
+        <video  width="640" height="480" autoplay id = 'webcam'>
+    </div>
+    <script>
+// Set the image source to the video feed URL
+        const webcamElement = document.getElementById('webcam');
+        webcamElement.src = "{% url 'video_feed' %}";  // Set the source to the video feed URL
+    </script>
+</body>
+</html>

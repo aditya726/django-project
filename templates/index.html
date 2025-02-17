@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Marking System</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="main-wrapper">
+        <header>
+            <h1 id="heading">
+                Attendance Marking System
+            </h1>
+        </header>
+        <div class="container">
+            {% if user.is_authenticated %}
+            <h2 id="welcome-msg">Welcome {{ user.username }}</h2>
+            <div class="buttons">
+                <a href="logout"><button class="btn logout-btn">Logout</button></a>
+                <a href="video_capture"><button class="btn capture-btn">Capture</button></a>
+                <a href="upload_image"><button class="btn upload-btn">Upload Images</button></a> <!-- New button for upload -->
+            </div>
+            {% else %}
+            <h2 class="guest-welcome">Welcome, User!</h2>
+            <div class="buttons">
+                <a href="login"><button class="btn login-btn">Login</button></a>
+                <a href="register"><button class="btn signup-btn">Sign Up</button></a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {%load static%}
+    <link rel = "stylesheet" href="{%static 'register.css'%}">
+</head>
+<body>
+    <h1>Sign up</h1>
+    {%for message in messages%}
+        <h5>{{message}}</h5>
+    {%endfor%}
+    <form method = 'POST' action ='register'>
+        {%csrf_token%}
+        <p>Enter Username</p>
+        <input type = 'text' name = 'username'>
+        <p>Enter Email</p>
+        <input type = 'email' name = 'email'>
+        <p>Enter password</p>
+        <input type = 'password' name = 'password'>
+        <p>Re-enter password</p>
+        <input type = 'password' name = 'confirmation'><br>
+        <input type = 'submit'/>
+    </form>
+</body>
+</html>
